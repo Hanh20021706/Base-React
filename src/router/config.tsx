@@ -5,9 +5,9 @@ export interface IRoute {
   path: string;
   // Exact, like in basic prop ()
   exact: boolean;
-  // Preloader for lazy loading (Trình tải trước để tải chậm)
+  // Preloader for lazy loading (loading khi chưa có dữ liệu)
   fallback: NonNullable<ReactNode> | null;
-  // Lazy Loaded component (Thành phần tải lười biếng)
+  // Lazy Loaded component (giống như page nào được hiển thị ở router này)
   component?: LazyExoticComponent<ComponentType<any>>;
   // Sub routes ( route phụ)
   routes?: IRoute[];

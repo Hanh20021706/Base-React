@@ -1,20 +1,16 @@
-import React from "react";
-import { IRoute } from "./config";
-import { Switch } from "react-router-dom";
-import RouteWithSubRoutes from "./RouteWithSubRoutes";
+import { useRoutes } from "react-router-dom";
+import Home from "../page/home";
+import Products from "../page/products";
 
-interface IProps {
-  routes: IRoute[];
+const routers = [
+  {
+    path: "/",
+    element: <Home />,
+    // children: [{ path: "products", element: <ProductPage /> }],
+  },
+  { path: "products", element: <Products /> },
+];
+
+export default function Routers() {
+  return useRoutes(routers);
 }
-
-const Router: React.FC<IProps> = ({ routes }) => {
-  return (
-    <Switch>
-      {routes.map((route: IRoute) => (
-        <RouteWithSubRoutes key={route.path} {...route} />
-      ))}
-    </Switch>
-  );
-};
-
-export default Router;
