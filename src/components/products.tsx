@@ -9,6 +9,8 @@ const ProductPage = ({ name, price }: ProductsProps) => {
     <div className="">
       <h2>{name}</h2>
       <p>{price}</p>
+
+      <h2>products page</h2>
     </div>
   );
 };
