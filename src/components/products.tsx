@@ -1,4 +1,5 @@
 import React from "react";
+import ColorButtons from "./ui/styled-button";
 
 type ProductsProps = {
   name?: string;
@@ -11,6 +12,7 @@ const ProductPage = ({ name, price }: ProductsProps) => {
       <p>{price}</p>
 
       <h2>products page</h2>
+      <ColorButtons />
     </div>
   );
 };
