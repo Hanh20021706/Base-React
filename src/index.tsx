@@ -1,13 +1,13 @@
 import { BrowserRouter } from "react-router-dom";
-import Router from "./router/Router";
 import { render } from "react-dom";
+import RouteRenderer from "./router/render-router";
 export const user = {
   authenticated: false,
 };
 
 render(
   <BrowserRouter>
-    <Router />
+    <RouteRenderer />
   </BrowserRouter>,
   document.getElementById("root")
 );
