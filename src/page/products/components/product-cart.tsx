@@ -1,23 +1,23 @@
 import { useState } from "react";
 
-// khởi tạo type
 type ProductCartProps = {
-  name: string;
-  price: number;
+  name?: string;
+  price?: number;
 };
 
-// {name, price} : ProductCartProps ) truyền props vào component
 const ProductCart = ({ name, price }: ProductCartProps) => {
-  const [value, setValue] = useState("value 1");
+  // khởi tạo một state
+  const [count, setCount] = useState(1);
+
+  // update lại state
   const handleSetValue = () => {
-    setValue("update value");
+    setCount(count + 1);
   };
   return (
     <>
-      <h2>{value}</h2>
-      <h2>{name}</h2>
-      <p>{price}</p>
-      <button onClick={handleSetValue}>update value</button>
+      {/* hiển thị state  */}
+      <h2>{count}</h2>
+      <button onClick={handleSetValue}>update count</button>
     </>
   );
 };
